@@ -1,0 +1,46 @@
+{
+  "logo": {
+    "img": "Collections",
+    "link": "https://i.imgur.com/SPZIVuD.png"
+  },
+  "links": [
+    {
+      "label": "Link 1",
+      "href": "www.hola.com"
+    },
+    {
+      "label": "Link 2",
+      "href": "www.hola2.com"
+    },
+    {
+      "label": "Link 4",
+      "links": [
+        {
+          "label": "Link 4.1",
+          "href": ""
+        },
+        {
+          "label": "Link 4.2",
+          "href": ""
+        }
+      ]
+    },
+    {
+      "label": "Link 3",
+      "href": "www.hola3.com"
+    },
+    {
+      "label": "Link 4",
+      "links": [
+        {
+          "label": "Link 4.1",
+          "href": ""
+        },
+        {
+          "label": "Link 4.2",
+          "href": ""
+        }
+      ]
+    }
+  ]
+}
