@@ -1,0 +1,34 @@
+@import '../sass/main.scss';
+
+.login{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	background-color: #000;
+	background-image: url('https://i.imgur.com/ziQqQ12.gif');
+	background-size: 100%;
+	&__container{
+		// background: $background;
+		padding: 45px 30px;
+		// box-shadow: $box-shadow;
+	}
+	&__form{
+		display: flex;
+		flex-direction: column;
+
+		& > input {
+			border: none;
+			padding-left: 10px;
+			height: 35px;
+			box-shadow: $box-shadow;
+			margin: 20px 0;
+		}
+		& > button{
+			box-shadow: $box-shadow;
+			background: $background;
+			border: none;
+		}
+	}
+}
