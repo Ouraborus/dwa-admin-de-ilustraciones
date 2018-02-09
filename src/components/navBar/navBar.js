@@ -1,21 +1,27 @@
 import data from '../../data/data.json'
 import template from './navBar.pug'
+import { NavBarModel } from '../../model/navBar/navBarModel.js'
 
 export class NavBar {
   constructor (node) {
     this.node = document.querySelector(node)
+    this.navBarModel = new NavBarModel()
     this.elements = {}
 
     this.fillHtml()
     this.setElements()
     this.setNavAnimation()
     this.setDropDown()
+    this.setSignOut()
   }
-
+  setSignOut () {
+    this.elements.signout.addEventListener('click', this.navBarModel.signOut)
+  }
   setElements () {
     this.elements.menu = this.node.children[0]
     this.elements.navbar = this.node.children[2]
     this.elements.dropDownElmts = this.node.querySelectorAll('.js-dropdown')
+    this.elements.signout = this.node.querySelector('.js-sign-out')
     this.elements.activeElmt = undefined
   }
 

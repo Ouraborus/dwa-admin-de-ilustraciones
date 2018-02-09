@@ -5,7 +5,8 @@ const StyleLintPlugin = require('stylelint-webpack-plugin')
 const path = require('path')
 
 const config = {
-  entry: {'main.js':'./src/main.js'},
+  entry: {'main': './src/main.js',
+    'dashboard': './src/dashboard.js'},
   devtool: 'inline-sourceMap',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -43,10 +44,10 @@ const config = {
         ]}
     ]},
   plugins: [
-    new StyleLintPlugin({}),
+    new StyleLintPlugin(),
     new ExtractTextPlugin('styles.css'),
-    new HtmlWebpackPlugin({template: './src/index.html', chunks:['main.js']}),
-    new HtmlWebpackPlugin({filename:'dashboard.html',template: './src/dashboard.html', chunks:['main.js']}),
+    new HtmlWebpackPlugin({template: './src/index.html', chunks: ['main']}),
+    new HtmlWebpackPlugin({filename: 'dashboard.html', template: './src/dashboard.html', chunks: ['dashboard']}),
     new UglifyJsPlugin({
       uglifyOptions: {
         beautify: false,
