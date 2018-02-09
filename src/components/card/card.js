@@ -6,6 +6,6 @@ export class Card {
     this.fillHtml(data)
   }
   fillHtml (data) {
-    this.node.innerHTML = template(data)
+    this.node.innerHTML += template(data)
   }
 }

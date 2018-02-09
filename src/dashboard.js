@@ -1,8 +1,7 @@
 import './components/sass/main.scss'
-import { Card } from './components/card/card.js'
+import { Grid } from './components/grid/grid.js'
 import { NavBar } from './components/navBar/navBar.js'
 /* eslint-disable */
 new NavBar('.navbar')
-//Usa Card para dinámicamente rellenar Grid dependiendo de la data
-new Card('.card')
+new Grid('.grid', ['1','2'])
 /* eslint-enable */
