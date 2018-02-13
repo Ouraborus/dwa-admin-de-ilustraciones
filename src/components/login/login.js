@@ -9,7 +9,9 @@ export class Login {
     this.fillHTML()
     this.setElmts()
     this.setLogin()
+    this.elements.signup = this.node.querySelectorAll('.js-signup')
     this.elements.loginModel = new LoginModel()
+    this.setSignUp()
   }
   fillHTML () {
     this.node.innerHTML = templateLogin()
@@ -28,5 +30,9 @@ export class Login {
     const pass = this.elements.pass.value
     this.elements.login.classList.add('hidden')
     this.elements.loginModel.loginValidate(email, pass)
+  }
+  setSignUp () {
+    this.elements.signup[3].addEventListener('click', () =>
+      this.elements.loginModel.userSignUp(this.elements.signup[0].value, this.elements.signup[1].value, this.elements.signup[2].value))
   }
 }

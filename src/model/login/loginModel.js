@@ -31,4 +31,24 @@ export class LoginModel {
       }
     })
   }
+  userSignUp (name, email, password) {
+    if (password.length >= 8 && /(?=.*[0-9])/.exec(password) && /(?=.*[!@#$%^&*"])/.exec(password)) {
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+      // .then(
+      //       firebase.database().ref('users/' + firebase.auth().user.uid).set({
+      //         username: name,
+      //         email: email
+      //       })
+      // )
+      .catch(function (error) {
+        /* eslint-disable */
+        alert(error)
+        /* eslint-enable */
+      })
+    } else {
+      /* eslint-disable */
+      alert('Contraseña no cumple con los requerimientos')
+      /* eslint-enable */
+    }
+  }
 }
