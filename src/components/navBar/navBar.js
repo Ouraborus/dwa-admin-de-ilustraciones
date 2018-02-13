@@ -10,17 +10,17 @@ export class NavBar {
     this.fillHtml()
     this.setElements()
     this.setNavAnimation()
-    this.setDropDown()
-    this.setSignOut()
+    this.setActions()
   }
-  setSignOut () {
+  setActions () {
     this.elements.signout.addEventListener('click', this.navBarModel.signOut)
+    this.elements.addcard.addEventListener('click', this.navBarModel.createCard('CARTA', 'Content Description', '12/22/1996', 'https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png'))
   }
   setElements () {
     this.elements.menu = this.node.children[0]
     this.elements.navbar = this.node.children[2]
-    this.elements.dropDownElmts = this.node.querySelectorAll('.js-dropdown')
     this.elements.signout = this.node.querySelector('.js-sign-out')
+    this.elements.addcard = this.node.querySelector('.js-add-card')
     this.elements.activeElmt = undefined
   }
 
@@ -37,11 +37,7 @@ export class NavBar {
   toggleElmt (element, data) {
     element.classList.toggle(data)
   }
-  setDropDown () {
-    this.elements.dropDownElmts.forEach(element => {
-      element.addEventListener('click', () => this.dropDownController(this.elements.activeElmt, element.querySelector('.navbar__dropdown'), 'navbar__dropdown--collapsed'))
-    })
-  }
+
   dropDownController (actual, selected, data) {
     if (actual === undefined || actual === selected) {
       this.elements.activeElmt = selected
