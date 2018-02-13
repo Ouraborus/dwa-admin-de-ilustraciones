@@ -1,4 +1,3 @@
-import data from '../../data/data.json'
 import template from './navBar.pug'
 import { NavBarModel } from '../../model/navBar/navBarModel.js'
 
@@ -26,7 +25,7 @@ export class NavBar {
   }
 
   fillHtml () {
-    this.node.innerHTML = template(data)
+    this.node.innerHTML = template()
   }
   setNavAnimation () {
     this.elements.menu.addEventListener('click', () => {

@@ -18,4 +18,13 @@ export class NavBarModel {
       }
     })
   }
+
+  addCard (title, description, date, url) {
+    firebase.database().ref('cards/' + firebase.auth().user.uid).set({
+      title: title,
+      description: description,
+      date: date,
+      url: url
+    })
+  }
 }

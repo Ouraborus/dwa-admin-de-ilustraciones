@@ -24,7 +24,8 @@
             margin: 5px 0px;
             cursor: pointer;
             transition: transform 200ms linear, top $hamburguer-animation;
-        }
+				}
+				
         &.active span:nth-child(1) {
             top: 8px;
             transform: rotate(45deg);
@@ -42,7 +43,12 @@
         @include large {
             display: none;
         }
-    }
+		}
+		&__img{
+			width: 55px;
+			height: 55px;
+			margin-left: 10px;
+		}
     &__background {
         height: 100vh;
         background: $shadow;
