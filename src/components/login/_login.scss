@@ -13,7 +13,6 @@
 				align-items: center;
 				flex-direction: column;
 				padding: 45px 30px;
-				
 				@include large{
 				flex-direction: row;					
 				}
@@ -27,12 +26,13 @@
             padding-left: 10px;
             height: 35px;
             box-shadow: $box-shadow;
-            margin: 20px 0;
+						margin: 20px 0;
+						color: #000;
         }
         &>button {
             box-shadow: $box-shadow;
             background: $background;
-            border: none;
+						border: none;
         }
     }
     &__signup {
@@ -45,6 +45,7 @@
 					height: 35px;
 					box-shadow: $box-shadow;
 					margin: 20px 0;
+					color: #000;					
 			}
 			&>button {
 					box-shadow: $box-shadow;
